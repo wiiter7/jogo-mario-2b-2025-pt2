@@ -13,6 +13,7 @@ const startGame = () => {
     startButton.style.display = "none";
 }
 
+
 const jump = () => {
     mario.classList.add("jump");
 
@@ -40,4 +41,10 @@ const marioPosition = +window.getComputedStyle(mario).bottom.replace("px", "");
         clearInterval(loop);
     }
 },10);
+
 document.addEventListener("keydown", jump);
+
+
+const restartGame = () => {
+    window.location.reload();
+}
