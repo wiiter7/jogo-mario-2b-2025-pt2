@@ -43,6 +43,7 @@ const marioPosition = +window.getComputedStyle(mario).bottom.replace("px", "");
         mario.style.marginLeft = "50px";
 
         clearInterval(loop);
+        gameOverScreen.style.display = "flex";
     }
 },10);
 
