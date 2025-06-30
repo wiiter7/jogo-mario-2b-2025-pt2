@@ -4,6 +4,9 @@ const nuvem = document.querySelector(".nuvem")
 const startButton = document.querySelector(".start")
 const gameOverScreen = document.querySelector(".game-over")
 
+audioStart = new Audio("./sound/audio_theme.mp3");
+const gameOverSound = new Audio("./sound/audio_gameover.mp3");
+
 let gameStarted = false
 
 const startGame = () => {
@@ -48,11 +51,16 @@ const marioPosition = +window.getComputedStyle(mario).bottom.replace("px", "");
         mario.style.width = "75px";
         mario.style.marginLeft = "50px";
 
+        audioStart.pause();
+        gameOverSound.play();
+
         clearInterval(loop);
         gameOverScreen.style.display = "flex";
     } else if (pipePosition < 0 && gameStarted) {
     pipe.style.left = '';
-    }
+    updateScore();
+    pipe.style.left
+}
 },10);
 
 document.addEventListener("keydown", jump);
